@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace SSO
+namespace SSO.AuthenticationCenter
 {
     public class Program
     {
@@ -18,10 +18,6 @@ namespace SSO
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(logging => {
-                    logging.AddLog4Net("ConfigFile/log4net.Config");
-
-                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

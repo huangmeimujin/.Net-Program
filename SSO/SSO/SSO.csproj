@@ -5,12 +5,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="logDebug\**" />
+    <Compile Remove="logError\**" />
+    <Compile Remove="logFatal\**" />
+    <Compile Remove="logInfo\**" />
+    <Compile Remove="logWARN\**" />
+    <Content Remove="logDebug\**" />
+    <Content Remove="logError\**" />
+    <Content Remove="logFatal\**" />
+    <Content Remove="logInfo\**" />
+    <Content Remove="logWARN\**" />
+    <EmbeddedResource Remove="logDebug\**" />
+    <EmbeddedResource Remove="logError\**" />
+    <EmbeddedResource Remove="logFatal\**" />
+    <EmbeddedResource Remove="logInfo\**" />
+    <EmbeddedResource Remove="logWARN\**" />
+    <None Remove="logDebug\**" />
+    <None Remove="logError\**" />
+    <None Remove="logFatal\**" />
+    <None Remove="logInfo\**" />
+    <None Remove="logWARN\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 

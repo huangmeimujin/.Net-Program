@@ -6,7 +6,9 @@ namespace SSO.Interface
 {
     public interface IAccountService
     {
-        Task<string> Login(UserInfo user);
+        Task<DataResult<UserInfo>> Login(UserInfo user);
+
+        BaseResult Regist(UserInfo user);
         
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using SSO.Interface;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SSO.Service
 {
-    public class BaseService : IBaseService
+    public abstract class BaseService : IBaseService
     {
         protected DbContext DBCountext { get; private set; }
 
@@ -135,7 +136,20 @@ namespace SSO.Service
 
         public void Execute<T>(string sql, SqlParameter[] parameter) where T : class
         {
-            throw new NotImplementedException();
+            IDbContextTransaction transaction = null;
+            try
+            {
+                transaction = this.DBCountext.Database.BeginTransaction();
+                this.DBCountext.Database.ExecuteSqlRaw(sql, parameter);
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null)
+                    transaction.Rollback();
+                throw ex;
+            }
+            
         } 
         #endregion
         public virtual void Dispose()
