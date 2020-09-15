@@ -42,6 +42,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SSO.DB\SSO.DB.csproj" />
+    <ProjectReference Include="..\SSO.Entity\SSO.Entity.csproj" />
+    <ProjectReference Include="..\SSO.Interface\SSO.Interface.csproj" />
+    <ProjectReference Include="..\SSO.Service\SSO.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\Filter\" />
   </ItemGroup>
 
 

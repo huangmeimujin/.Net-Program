@@ -13,6 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using SSO.DB;
+using SSO.Interface;
+using SSO.Service;
+using SSO.Utility;
 
 namespace SSO
 {
@@ -32,6 +35,9 @@ namespace SSO
             //services.AddDbContext<SSODBContext>(opt=> opt.UseSqlServer(Configuration.GetConnectionString("ssoDbContext")));
             var connection = Configuration.GetConnectionString("ssoDbContext");
             services.AddDbContext<SSODBContext>(opt => opt.UseSqlServer(connection,c=>c.MigrationsAssembly("SSO")));
+            services.AddScoped<IJWTService, JWTService>();
+            services.AddScoped<IAccountService, AccountService>();
+
 
             #region JWT鉴权授权
             //1.Nuget引入程序包：Microsoft.AspNetCore.Authentication.JwtBearer 
@@ -74,6 +80,11 @@ namespace SSO
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            #region 通过中间件来支持鉴权授权
+            app.UseAuthentication(); //告诉框架 要使用权限认证
+            #endregion
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

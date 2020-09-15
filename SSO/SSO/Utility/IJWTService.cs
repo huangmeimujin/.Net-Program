@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SSO.AuthenticationCenter.Utility
+namespace SSO.Utility
 {
     public interface IJWTService
     {

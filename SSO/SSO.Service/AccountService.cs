@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SSO.DB;
+using SSO.Entity;
 using SSO.Interface;
 using System;
 using System.Collections.Generic;
@@ -14,13 +15,13 @@ namespace SSO.Service
         {
 
         }
-        public async Task<DataResult<UserInfo>> Login(UserInfo user)
+        public async Task<DataResult<UserInfo>> Login(LoginInfo user)
         {
             string sql = "select * from UserInfo where userName=@userName and PassWord=@passWord";
             var ps = new List<SqlParameter>()
                 {
                      new SqlParameter("@userName", user.UserName),
-                     new SqlParameter("@passWord", user.PassWord),
+                     new SqlParameter("@passWord", user.Password),
                 }.ToArray();
 
             var query= this.ExecuteQuery<UserInfo>(sql,ps);

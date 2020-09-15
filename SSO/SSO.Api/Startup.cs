@@ -6,17 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using SSO.AuthenticationCenter.Utility;
-using SSO.DB;
-using SSO.Interface;
-using SSO.Service;
 
-namespace SSO.AuthenticationCenter
+namespace SSO.Api
 {
     public class Startup
     {
@@ -30,12 +25,7 @@ namespace SSO.AuthenticationCenter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration.GetConnectionString("ssoDbContext");
-            services.AddDbContext<SSODBContext>(opt => opt.UseSqlServer(connection, c => c.MigrationsAssembly("SSO")));
-            services.AddScoped<IJWTService, JWTService>();
-            services.AddScoped<IAccountService, AccountService>();
             services.AddControllers();
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,10 +35,6 @@ namespace SSO.AuthenticationCenter
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            #region 通过中间件来支持鉴权授权
-            app.UseAuthentication(); //告诉框架 要使用权限认证
-            #endregion
 
             app.UseHttpsRedirection();
 

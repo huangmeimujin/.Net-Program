@@ -1,6 +1,6 @@
 using System;
 
-namespace SSO.AuthenticationCenter
+namespace SSO.Api
 {
     public class WeatherForecast
     {

@@ -7,16 +7,25 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 <div class="text-center">
-    <h1 class="display-4">登入</h1>
-    <span>
-        <label>用户名：</label>
-        <input id="txtUserName" type="text" />
-    </span>
-    <span>
-        <label>密码：</label>
-        <input id="txtPassword" type="text" />
-    </span>
-    <span>
-        <input id="btnLogin" type="button" value="登入" />
-    </span>
+    <button id="btnLogin">登入</button>
+    <button id="btnRegist">注册</button>
 </div>
+
+<script>
+    $.ajax(
+        {
+           url: '/api/Token',     // 请求地址, 就是你的控制器, 如 test.com/home/index/index
+           data: JSON.stringify({UserName:"ArielHuang",Password:"123456"}),   // 需要传送的参数
+           type: 'POST',   // 请求方式
+           dataType: 'json', // 返回数据的格式, 通常为JSON
+           contentType: 'application/json',             
+           success: function (result) {
+               window.location.href = result.NextUrl;
+               msg = result.Msg;
+               console.log(result); // 请求成功后的回调函数, result 为响应内容
+           },
+           error: function () {
+               console.log('Send Request Fail..'); // 请求失败时的回调函数
+           }
+       });
+</script>

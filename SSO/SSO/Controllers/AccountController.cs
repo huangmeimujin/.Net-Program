@@ -8,9 +8,20 @@ using Microsoft.AspNetCore.Mvc;
 namespace SSO.Controllers
 {
     [Authorize]
-    public class Account1Controller : Controller
+    public class AccountController : Controller
     {
-        public IActionResult Index()
+         
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Regist()
+        {
+            return View();
+        }
+
+        public IActionResult Logout()
         {
             return View();
         }

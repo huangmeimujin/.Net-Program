@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSO.AuthenticationCenter.Utility
+namespace SSO.Utility
 {
     public class JWTService : IJWTService
     {

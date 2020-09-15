@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO.Service", "SSO.Service\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO.UnitTest", "SSO.UnitTest\SSO.UnitTest.csproj", "{8680956C-1BFA-4E19-92D5-2833A21B8241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO.AuthenticationCenter", "SSO.AuthenticationCenter\SSO.AuthenticationCenter.csproj", "{A3B1073A-B416-42D5-9F3D-33A0B33C856E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO.Entity", "SSO.Entity\SSO.Entity.csproj", "{41EBBD1F-F354-4D45-9613-5AE4ACB18FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSO.Entity", "SSO.Entity\SSO.Entity.csproj", "{41EBBD1F-F354-4D45-9613-5AE4ACB18FAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSO.Api", "SSO.Api\SSO.Api.csproj", "{B72D2106-3775-439B-A66D-75C715195B94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +43,14 @@ Global
 		{8680956C-1BFA-4E19-92D5-2833A21B8241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8680956C-1BFA-4E19-92D5-2833A21B8241}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8680956C-1BFA-4E19-92D5-2833A21B8241}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3B1073A-B416-42D5-9F3D-33A0B33C856E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3B1073A-B416-42D5-9F3D-33A0B33C856E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3B1073A-B416-42D5-9F3D-33A0B33C856E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3B1073A-B416-42D5-9F3D-33A0B33C856E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{41EBBD1F-F354-4D45-9613-5AE4ACB18FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{41EBBD1F-F354-4D45-9613-5AE4ACB18FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41EBBD1F-F354-4D45-9613-5AE4ACB18FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41EBBD1F-F354-4D45-9613-5AE4ACB18FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72D2106-3775-439B-A66D-75C715195B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72D2106-3775-439B-A66D-75C715195B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72D2106-3775-439B-A66D-75C715195B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72D2106-3775-439B-A66D-75C715195B94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
